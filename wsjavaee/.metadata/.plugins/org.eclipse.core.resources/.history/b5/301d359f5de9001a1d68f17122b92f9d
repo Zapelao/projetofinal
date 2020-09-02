@@ -1,0 +1,10 @@
+package br.com.projetofinal.model;
+
+public class Pdv {
+	private int id;
+	private int numPonto;
+	private String nome;
+	private String endereco;
+	private String telefone;
+
+}

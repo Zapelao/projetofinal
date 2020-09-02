@@ -1,0 +1,24 @@
+package br.com.projetofinal.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.projetofinal.dao.PdvDAO;
+import br.com.projetofinal.model.Pdv;
+
+@RestController
+public class PdvController {
+	
+	
+	@Autowired
+	private PdvDAO pdvdao;
+	
+ 	@PostMapping("/pdv/newpdv")
+	public Pdv insertPdv(@RequestBody Pdv pdv){
+		Pdv retorno = pdvdao.save(pdv);
+		return retorno;
+	}
+	
+}

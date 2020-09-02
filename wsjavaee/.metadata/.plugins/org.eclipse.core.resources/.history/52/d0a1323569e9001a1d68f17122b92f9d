@@ -1,0 +1,54 @@
+package br.com.projetofinal.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Table(name="tb_usuarios")
+@Entity
+public class Artista {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="codigo")
+	private int codigo;
+	
+	@Column(name="nomeartistico", length=30)
+	private String nomeArtistico;
+	
+	@Column(name="nacionalidade", length=30)
+	private String nacionalidade;
+	
+	public Artista() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public Artista(int codigo, String nomeArtistico, String nacionalidade) {
+		super();
+		this.codigo = codigo;
+		this.nomeArtistico = nomeArtistico;
+		this.nacionalidade = nacionalidade;
+	}
+	public int getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
+	public String getnomeArtistico() {
+		return nomeArtistico;
+	}
+	public void setnomeArtistico(String nomeArtistico) {
+		this.nomeArtistico = nomeArtistico;
+	}
+	public String getnacionalidade() {
+		return nacionalidade;
+	}
+	public void setnacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
+	
+
+}
